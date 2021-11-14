@@ -163,7 +163,8 @@ class Main extends Component {
             }
             return store.getState().username;
         } else {
-            console.log(localStorage.getItem("password"));
+            
+            (localStorage.getItem("password"));
             return localStorage.getItem("password");
         }
     }

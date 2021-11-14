@@ -17,6 +17,19 @@ let handleError = (err) => {
 let handleLogin = (username, password, ths) => {
     axios.get(`https://server234.glitch.me/api/users`).then(function (res) {
         //
+        let foundAccount = false;
+        let j = 0;
+        while (j < res.data.length) {
+            if (res.data[j].username === username && res.data[j].password === password) {
+                foundAccount = true;
+                break;
+            }
+            j++;
+        }
+        if (!foundAccount) {
+            handleError(`No such username or password`);
+            return;
+        }
         axios.get(`https://server234.glitch.me/api/sessions`).then(function (res) {
             let i = 0;
             console.log(res.data);

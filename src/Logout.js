@@ -112,18 +112,11 @@ class Logout extends Component {
     }
     logOut() {
         /*Logout*/
-        if (ths.getUsername() !== undefined) {
-            axios.delete(`https://server234.glitch.me/api/sessions`, {
-                username: ths.getUsername(),
-                password: ths.getPassword()
-            }).then(function (res) {
-                store.dispatch({type: 'Logout'});
-
-                ths.handleText('Logged out successfully');
-            }).catch(err => {
-                ths.handleText('There has been an error');
-                console.error(err);
-            })
+        if (ths.getUsername() !== null) {
+            store.dispatch({type: 'Logout'});
+            localStorage.removeItem('username');
+            localStorage.removeItem('password');
+            ths.handleText('Logged out successfully');
         } else {
         }
     }

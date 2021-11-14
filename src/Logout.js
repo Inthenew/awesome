@@ -129,6 +129,9 @@ class Logout extends Component {
                     store.dispatch({type: 'Logout'});
 
                     ths.handleText('Logged out successfully');
+                    setTimeout(function () {
+                        location.reload();
+                    }, 500)
                 }).catch(err => {
                     ths.handleText('There has been an error');
                     console.error(err);

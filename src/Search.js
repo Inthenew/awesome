@@ -37,14 +37,14 @@ window.getResults = function () {
     let password = ths.getPassword();
     let code;
     let title;
-    axios.post('/api/getRes', {
+    axios.post('https://server234.glitch.me/api/getRes', {
         username: username,
         password: password,
         search: search
     }).then(function (res) {
         for (let i = 0; i < res.data.length; i++) {
             document.getElementById('reslts').innerHTML += `
-            <a href="/games/${res.data[i].id}"><h4 style="border-style: solid;  display: inline-block;  width: -moz-fit-content; width: fit-content; border-color: black;">${res.data[i].title}</h4></a>
+            <a href="https://server234.glitch.me/games/${res.data[i].id}"><h4 style="border-style: solid;  display: inline-block;  width: -moz-fit-content; width: fit-content; border-color: black;">${res.data[i].title}</h4></a>
             `;
         }
         if (res.data.length <= 0) {
@@ -79,14 +79,7 @@ class Search extends Component {
             }
             return store.getState().username;
         } else {
-            if (document.cookie.length > 0) {
-                let info = parseDocumentCookie();
-                let username = info.username;
-                let password = info.password;
-                return username;
-            } else {
-                return undefined;
-            }
+            return localStorage.getItem("username");
         }
     }
 
@@ -97,18 +90,11 @@ class Search extends Component {
             }
             return store.getState().username;
         } else {
-            if (document.cookie.length > 0) {
-                let info = parseDocumentCookie();
-                let username = info.username;
-                let password = info.password;
-                return password;
-            } else {
-                return undefined;
-            }
+            return localStorage.getItem("password");
         }
     }
     logedIn(username) {
-        if (username === undefined) {
+        if (username === null) {
             return false;
         } else {
             return true;

@@ -43,8 +43,7 @@ window.getResults = function () {
         search: search
     }).then(function (res) {
         for (let i = 0; i < res.data.length; i++) {
-            document.getElementById('reslts').innerHTML += `
-            <a href="https://server234.glitch.me/games/${res.data[i].id}"><h4 style="border-style: solid;  display: inline-block;  width: -moz-fit-content; width: fit-content; border-color: black;">${res.data[i].title}</h4></a>
+            document.getElementById('reslts').innerHTML += `<div style="border-style: solid;  display: inline-block;  width: -moz-fit-content; width: fit-content; border-color: black;" ><a href="https://server234.glitch.me/${res.data[i].id}">${res.data[i].title}</h4><h6>Made by: ${res.data[i].user}</h6></a> </div>
             `;
         }
         if (res.data.length <= 0) {

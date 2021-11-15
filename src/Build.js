@@ -185,9 +185,6 @@ class Main extends Component {
                     <h4>Copy and paste your HTML here</h4>
                     <br/>
                     <a href="javascript:window.getCode()"><Button bsStyle="success" bsSize="small" href="" id="editFile" target="_blank" >Get Code</Button></a>
-                       <br/>
-                        <br/>
-                        <a href="javascript:window.deleteCode()"><Button bsStyle="success" bsSize="small" href="" id="editFile" target="_blank" >Delete Code</Button></a>
                     <br/>
                     <br/>
                     <textarea name="text" id="Code" cols="70" rows="20"></textarea>

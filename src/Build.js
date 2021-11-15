@@ -100,26 +100,22 @@ window.getCode = function () {
     })
 
 }
-
-window.getCode = function () {
+window.deleteCode = function () {
     let id = prompt(`Tell me the last numbers of your link`);
-    /** 1. Extract code from the textbox; **/
-    let Title = $('#getTitle').val();
-    let Code = $('#Code').val();
-    /** 2. Send code to server; **/
     let username = ths.getUsername();
     let password = ths.getPassword();
-    let code;
-    let title;
-    axios.post('https://server234.glitch.me/api/getCode', {
+    axios.post('https://server234.glitch.me/api/deleteCode', {
         username: username,
         password: password,
-        id2: Number(id)
+        id: Number(id)
     }).then(function (res) {
-        code = res.data.code;
-        title = res.data.title;
-        document.getElementById('Code').innerHTML = code;
-        document.getElementById('getTitle').value = title;
+        if (res.data === 'ERR') {
+            alert('This is not your game.');
+        } else if (res.data === 'ERR1') {
+            alert('Could not find what you wanted to be deleted.');
+        } else {
+            alert('Deleted successfully.');
+        }
     }).catch(err => {
         console.error(err);
     })
@@ -189,6 +185,9 @@ class Main extends Component {
                     <h4>Copy and paste your HTML here</h4>
                     <br/>
                     <a href="javascript:window.getCode()"><Button bsStyle="success" bsSize="small" href="" id="editFile" target="_blank" >Get Code</Button></a>
+                       <br/>
+                        <br/>
+                        <a href="javascript:window.deleteCode()"><Button bsStyle="success" bsSize="small" href="" id="editFile" target="_blank" >Delete Code</Button></a>
                     <br/>
                     <br/>
                     <textarea name="text" id="Code" cols="70" rows="20"></textarea>

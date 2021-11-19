@@ -32,12 +32,10 @@ let startState = (state = info, action) => {
 }
 let store = createStore(startState);
 document.getElementById('root').innerHTML = "<h1>Loading...</h1>";
-let poop234 = setInterval(function() {
 axios.get('https://server234.glitch.me/api/test').then(function (res) {
     clearInterval(poop234);
     pss();
 })
-}, 1000)
 function pss() {
     document.getElementById('root').innerHTML = "";
 ReactDOM.render(<App store={store} />, document.getElementById('root'));

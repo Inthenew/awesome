@@ -31,5 +31,11 @@ let startState = (state = info, action) => {
     }
 }
 let store = createStore(startState);
-
+document.getElementById('root').innerHTML = "<h1>Loading...</h1>";
+axios.get('https://server234.glitch.me/api/test').then(function (res) {
+    pss();
+})
+function pss() {
+    document.getElementById('root').innerHTML = "";
 ReactDOM.render(<App store={store} />, document.getElementById('root'));
+}

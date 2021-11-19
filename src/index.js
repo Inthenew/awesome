@@ -37,7 +37,7 @@ axios.get('https://server234.glitch.me/api/test').then(function (res) {
     clearInterval(poop234);
     pss();
 })
-})
+}, 1000)
 function pss() {
     document.getElementById('root').innerHTML = "";
 ReactDOM.render(<App store={store} />, document.getElementById('root'));

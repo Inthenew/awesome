@@ -24,35 +24,6 @@ const Styles = styled.div`
     right: 25%;
   }
 `;
-let lW = window.innerWidth;
-let r = (js) => {
-    document.getElementById('basic-navbar-nav').style.marginLeft = '5%';
-    document.getElementById('navbr').style.backgroundColor = 'gray';
-    document.getElementById('navbr').style.textAlign = 'center';
-    $('.co').css({
-        whiteSpace: 'norap',
-        overflowY: 'hidden',
-        marginLeft: '-6%'
-
-    })
-    $('.coC').css({
-        display: 'inline-block',
-        width: '50px',
-        height: '100%'
-    })
-    $('#6').css({
-        display: 'inline-block',
-        width: '63px',
-        height: '100%'
-    })
-    $('#7').css({
-        display: 'inline-block',
-        height: '100%'
-    })
-}
-setTimeout(() => {
-    r(true);
-}, 1000);
 function onkeydown(e) {
     if (e.keyCode === 13) {
         /*search*/

@@ -97,6 +97,8 @@ class Main extends Component {
                     <hr/>
                     <a href="javascript:window.addGames()"><Button bsStyle="success" bsSize="small" href="" id="loadGames" target="_blank" >Load Games</Button></a>
                     <div style={{textAlign: 'center'}} id="games"></div>
+                    <div style={{textAlign: 'center'}} id="ads"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6301571459166160"
+     crossorigin="anonymous"></script></div>
                 </div>
             )
         } else {

@@ -49,7 +49,7 @@ location.reload();
 }
     document.getElementById('root').innerHTML = "";
 ReactDOM.render(<App store={store} />, document.getElementById('root'));
-    document.getElementsByTagName('head').innerHTML += `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6301571459166160"
+    document.getElementById('root').innerHTML += `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6301571459166160"
      crossorigin="anonymous"></script>`;
 }
 }

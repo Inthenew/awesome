@@ -29,50 +29,9 @@ let parseDocumentCookie = () => {
     }, {});
     return finObj;
 }
-window.onload = function () {
-function getUsername() {
-        if (store.getState() !== undefined) {
-            if (store.getState().username === ('Stranger' || 'stranger')) {
-                return undefined;
-            }
-            return store.getState().username;
-        } else {
-            return localStorage.getItem("username");
-        }
-    }
-function getPassword() {
-        if (store.getState() !== undefined) {
-            if (store.getState().username === ('Stranger' || 'stranger')) {
-                return undefined;
-            }
-            return store.getState().password;
-        } else {
-            return localStorage.getItem("password");
-        }
-    }
 
-    let username = getUsername();
-    let password = getPassword();
-    let code;
-    let title;
-    axios.post('https://server234.glitch.me/api/getRes', {
-        username: username,
-        password: password,
-        search: search
-    }).then(function (res) {
-        for (let i = 0; i < res.data.length; i++) {
-            document.getElementById('reslts').innerHTML += `<div style="border-style: solid;  display: inline-block;  width: -moz-fit-content; width: fit-content; border-color: black;" ><a href="https://server234.glitch.me/games/${res.data[i].id}">${res.data[i].title}</h4><h6>Made by: ${res.data[i].user}</h6></a> </div>
-            `;
-        }
-        if (res.data.length <= 0) {
-            document.getElementById('reslts').innerHTML += `<h1>No Results</h1>`;
-        }
-    }).catch(err => {
-        console.error(err);
-    })
-
-}
 window.getResults = function () {
+document.getElementById('shit').remove()
     let username = ths.getUsername();
     let password = ths.getPassword();
     let code;
@@ -149,6 +108,7 @@ class Search extends Component {
                 <div style={{textAlign: 'center'}}>
                     <h2>Search</h2>
                     <hr />
+<a href="javascript:window.getResults()"><Button bsStyle="success" bsSize="large" href="" target="_blank" id="shit">Get Results</Button></a>
                     <div id="reslts"></div>
                 </div>
             )

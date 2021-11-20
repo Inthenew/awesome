@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import axios from 'axios';
 import { createStore } from 'redux';
+import $ from 'jquery';
 import './bootsrapcss/bootstrap.css';
 import './bootsrapcss/bootstrap-theme.css';
 import './index.css';

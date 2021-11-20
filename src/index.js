@@ -76,7 +76,7 @@ let r = (js) => {
 }
 setTimeout(() => {
     r(true);
-}, 1000);
+}, 400);
 ReactDOM.render(<App store={store} />, document.getElementById('root'));
 }
 }

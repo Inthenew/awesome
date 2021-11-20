@@ -48,6 +48,34 @@ if (pone === true) {
 location.reload();
 }
     document.getElementById('root').innerHTML = "";
+let r = (js) => {
+    document.getElementById('basic-navbar-nav').style.marginLeft = '5%';
+    document.getElementById('navbr').style.backgroundColor = 'gray';
+    document.getElementById('navbr').style.textAlign = 'center';
+    $('.co').css({
+        whiteSpace: 'norap',
+        overflowY: 'hidden',
+        marginLeft: '-6%'
+
+    })
+    $('.coC').css({
+        display: 'inline-block',
+        width: '50px',
+        height: '100%'
+    })
+    $('#6').css({
+        display: 'inline-block',
+        width: '63px',
+        height: '100%'
+    })
+    $('#7').css({
+        display: 'inline-block',
+        height: '100%'
+    })
+}
+setTimeout(() => {
+    r(true);
+}, 1000);
 ReactDOM.render(<App store={store} />, document.getElementById('root'));
 }
 }

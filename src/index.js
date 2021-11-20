@@ -48,8 +48,6 @@ if (pone === true) {
 location.reload();
 }
     document.getElementById('root').innerHTML = "";
-        document.getElementById('root').innerHTML += `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6301571459166160"
-     crossorigin="anonymous"></script>`;
 ReactDOM.render(<App store={store} />, document.getElementById('root'));
 }
 }

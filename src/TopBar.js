@@ -52,7 +52,7 @@ let r = (js) => {
 }
 setTimeout(() => {
     r(true);
-}, 400);
+}, 1000);
 function onkeydown(e) {
     if (e.keyCode === 13) {
         /*search*/

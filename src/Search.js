@@ -30,8 +30,29 @@ let parseDocumentCookie = () => {
     return finObj;
 }
 window.onload = function () {
-    let username = ths.getUsername();
-    let password = ths.getPassword();
+function getUsername() {
+        if (store.getState() !== undefined) {
+            if (store.getState().username === ('Stranger' || 'stranger')) {
+                return undefined;
+            }
+            return store.getState().username;
+        } else {
+            return localStorage.getItem("username");
+        }
+    }
+function getPassword() {
+        if (store.getState() !== undefined) {
+            if (store.getState().username === ('Stranger' || 'stranger')) {
+                return undefined;
+            }
+            return store.getState().password;
+        } else {
+            return localStorage.getItem("password");
+        }
+    }
+
+    let username = getUsername();
+    let password = getPassword();
     let code;
     let title;
     axios.post('https://server234.glitch.me/api/getRes', {

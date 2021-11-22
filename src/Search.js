@@ -61,9 +61,17 @@ class Search extends Component {
         this.state = { search: search };
         store = this.props.store;
         ths = this;
+let hp2 = 0
         setInterval(() => {
             search = convertToEnglish(document.URL.slice(location.protocol.length + 30, location.length));
             if (this.state.search !== search) {
+hp2++
+setTimeout(function () {
+if (hp2 >= 2) {
+location.reload()
+}
+hp2 = 0
+}, 200)
                 this.setState(currState => ({ search: search }));
 document.getElementById('reslts').innerHTML = '';
                 window.getResults();

@@ -118,7 +118,7 @@ document.getElementById('reslts').innerHTML = '';
                     <h2>Search</h2>
                     <hr />
 
-<a href="javascript:window.getResults()"><Button bsStyle="success" bsSize="large" href="" target="_blank">Get Results</Button></a>
+<a href="javascript:window.getResults()"><Button bsStyle="success" bsSize="large" href="" target="_blank" id="shit">Get Results</Button></a>
                     <div id="reslts"></div>
                 </div>
             )
@@ -127,7 +127,7 @@ document.getElementById('reslts').innerHTML = '';
                 <div style={{textAlign: 'center'}}>
                     <h2>Your not logged in!</h2>
                     <hr/>
-                    <a href={`/#/login`}><Button bsStyle="success" bsSize="large" href="" target="_blank" id="shit">Login</Button></a>
+                    <a href={`/#/login`}><Button bsStyle="success" bsSize="large" href="" target="_blank">Login</Button></a>
                 </div>
             )
         }

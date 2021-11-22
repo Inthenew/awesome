@@ -31,6 +31,7 @@ let parseDocumentCookie = () => {
 }
 
 window.getResults = function () {
+document.getElementById("shit").remove();
     let username = ths.getUsername();
     let password = ths.getPassword();
     let code;
@@ -116,6 +117,8 @@ document.getElementById('reslts').innerHTML = '';
                 <div style={{textAlign: 'center'}}>
                     <h2>Search</h2>
                     <hr />
+
+<a href="javascript:window.getResults()"><Button bsStyle="success" bsSize="large" href="" target="_blank">Get Results</Button></a>
                     <div id="reslts"></div>
                 </div>
             )
@@ -124,7 +127,7 @@ document.getElementById('reslts').innerHTML = '';
                 <div style={{textAlign: 'center'}}>
                     <h2>Your not logged in!</h2>
                     <hr/>
-                    <a href={`/#/login`}><Button bsStyle="success" bsSize="large" href="" target="_blank">Login</Button></a>
+                    <a href={`/#/login`}><Button bsStyle="success" bsSize="large" href="" target="_blank" id="shit">Login</Button></a>
                 </div>
             )
         }

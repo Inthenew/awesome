@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Nav, Navbar, Form, FormControl, Button } from 'react-bootstrap';
 import { HashRouter, Route, Link } from 'react-router-dom';
 import axios from 'axios';
-console.log('log')
 function convertToEnglish(search) {
     let result = search;
     let i = 0;
@@ -32,7 +31,7 @@ let parseDocumentCookie = () => {
 }
 
 window.getResults = function () {
-document.getElementById("shit").remove();
+document.getElementById('shit').remove()
     let username = ths.getUsername();
     let password = ths.getPassword();
     let code;
@@ -63,20 +62,11 @@ class Search extends Component {
         this.state = { search: search };
         store = this.props.store;
         ths = this;
-let hp2 = 0
         setInterval(() => {
             search = convertToEnglish(document.URL.slice(location.protocol.length + 30, location.length));
             if (this.state.search !== search) {
-hp2++
-setTimeout(function () {
-if (hp2 >= 2) {
-location.reload()
-}
-hp2 = 0
-}, 200)
                 this.setState(currState => ({ search: search }));
-document.getElementById('reslts').innerHTML = '';
-                window.getResults();
+                location.reload();
             }
         }, 100);
     }
@@ -118,7 +108,6 @@ document.getElementById('reslts').innerHTML = '';
                 <div style={{textAlign: 'center'}}>
                     <h2>Search</h2>
                     <hr />
-
 <a href="javascript:window.getResults()"><Button bsStyle="success" bsSize="large" href="" target="_blank" id="shit">Get Results</Button></a>
                     <div id="reslts"></div>
                 </div>

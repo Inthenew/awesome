@@ -65,6 +65,7 @@ class Search extends Component {
             search = convertToEnglish(document.URL.slice(location.protocol.length + 30, location.length));
             if (this.state.search !== search) {
                 this.setState(currState => ({ search: search }));
+document.getElementById('reslts').innerHTML = '';
                 window.getResults();
             }
         }, 100);

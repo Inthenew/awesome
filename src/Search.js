@@ -31,7 +31,6 @@ let parseDocumentCookie = () => {
 }
 
 window.getResults = function () {
-document.getElementById('shit').remove()
     let username = ths.getUsername();
     let password = ths.getPassword();
     let code;
@@ -66,7 +65,7 @@ class Search extends Component {
             search = convertToEnglish(document.URL.slice(location.protocol.length + 30, location.length));
             if (this.state.search !== search) {
                 this.setState(currState => ({ search: search }));
-                location.reload();
+                window.getResults();
             }
         }, 100);
     }
@@ -108,7 +107,6 @@ class Search extends Component {
                 <div style={{textAlign: 'center'}}>
                     <h2>Search</h2>
                     <hr />
-<a href="javascript:window.getResults()"><Button bsStyle="success" bsSize="large" href="" target="_blank" id="shit">Get Results</Button></a>
                     <div id="reslts"></div>
                 </div>
             )

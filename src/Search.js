@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Nav, Navbar, Form, FormControl, Button } from 'react-bootstrap';
 import { HashRouter, Route, Link } from 'react-router-dom';
 import axios from 'axios';
+console.log('log')
 function convertToEnglish(search) {
     let result = search;
     let i = 0;
